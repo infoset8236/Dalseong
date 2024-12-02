@@ -1,0 +1,633 @@
+@charset "utf-8";
+@import url("/resources/common/css/font-style.css")
+
+/* 스타일 */
+a:hover,
+a:focus {
+    color: #2b74c0
+}
+
+/* header */
+.libSite {
+    position: absolute;
+    top: 0;
+    z-index: 96;
+    height: 44px;
+    line-height: 44px;
+    overflow: hidden;
+}
+
+.libSite ul li {
+    display: inline-block;
+    float: left;
+    border-left: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+}
+
+.libSite ul li.br {
+    border-right: 1px solid #ccc;
+    margin-right: 7px;
+}
+
+.libSite ul li.sns_icon {
+    border: none;
+}
+
+.libSite ul li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    line-height: 44px;
+    padding: 0 15px;
+}
+
+.libSite ul li.sns_icon a {
+    padding: 7px 5px;
+}
+
+.libSite ul li.on a {
+    background: #000;
+    color: #fff;
+}
+
+.tnb {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 999999;
+}
+
+.tnb .util {
+    float: right;
+    height: 44px;
+    line-height: 44px;
+}
+
+.tnb .util a {
+    font-size: 15px;
+    color: #000;
+    font-weight: normal;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.tnb .util b {
+    color: #000;
+}
+
+.tnb .l-util ul li.mobile-version {
+    display: none;
+}
+
+h1.web-logo a {
+    display: block;
+    background: url('/resources/homepage/bukgs/img/bukgs_logo_b.png') no-repeat center center;
+    width: 230px;
+    height: 45px;
+    font-size: 0;
+}
+
+h1.mobile-logo {
+    display: none;
+    width: 230px;
+    height: 45px;
+}
+
+.Gnb .g-menu a.last-box_w {
+    display: none;
+}
+
+.Gnb .g-menu a.last-box_b {
+    display: block;
+}
+
+#header.background-white .libSite ul li a {
+    color: #fff;
+}
+
+#header.background-white .libSite ul li.on a {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+#header.background-white .tnb .util a {
+    color: #fff;
+}
+
+#header.background-white .tnb .util b {
+    color: #fff;
+}
+
+#header.background-white h1.web-logo a {
+    display: block;
+    background: url('/resources/homepage/bukgs/img/bukgs_logo.png') no-repeat center center;
+}
+
+#header.background-white .Gnb .g-menu a.last-box_w {
+    display: block;
+}
+
+#header.background-white .Gnb .g-menu a.last-box_b {
+    display: none;
+}
+
+#header.background-white .Gnb .gnb-menu>li>a {
+    color: #fff;
+}
+
+#header .head {
+    position: relative;
+    z-index: 20;
+    clear: both
+}
+
+#header h1.web-logo {
+    position: absolute;
+    z-index: 10000;
+    top: 10px;
+}
+
+.popupWrap {
+    z-index: 6
+}
+
+/* Gnb */
+.Gnb {
+    clear: both;
+    text-align: center;
+    width: 100%;
+    height: 63px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: inherit;
+    position: relative;
+    border-top: 1px solid #ccc;
+}
+
+.Gnb .g-menu {
+    position: relative;
+}
+
+.Gnb .g-menu a.last-box_b,
+.Gnb .g-menu a.last-box_w {
+    position: absolute;
+    right: 0;
+    top: 21px;
+}
+
+.Gnb .gnb-menu {
+    position: relative;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.Gnb .gnb-menu>li {
+    padding: 0 1.8%;
+    text-align: right;
+    position: static
+}
+
+.Gnb .gnb-menu>li:last-child {
+    padding-right: 50px;
+}
+
+.Gnb .gnb-menu>li>a {
+    padding: 10px 0;
+    line-height: 43px;
+    height: 43px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.Gnb .gnb-menu>li>ul {
+    display: none;
+    background: #666;
+    border: 0;
+    left: 0;
+    white-space: nowrap;
+    text-align: right
+}
+
+.Gnb .gnb-menu>li.active>ul {
+    display: block
+}
+
+.Gnb .gnb-menu>li>.SubMenu>li {
+    width: auto;
+    padding: 0 1px;
+}
+
+.Gnb .gnb-menu>li>.SubMenu>li {
+    display: inline-block
+}
+
+.Gnb .gnb-menu>li>.SubMenu>li>a {
+    font-size: 14px;
+    padding: 0 5px;
+    color: #eee;
+}
+
+.Gnb .gnb-menu>li>.SubMenu>li>a:hover,
+.Gnb .gnb-menu>li>.SubMenu>li>a:focus {
+    background: none;
+    color: #ff8d12;
+}
+
+.Gnb .mask,
+.Gnb .gnb-menu>li>ul {
+    width: 100%;
+    background: #333;
+}
+
+.Gnb .gnb-menu>li.menu1>ul,
+.Gnb .gnb-menu>li.menu2>ul,
+.Gnb .gnb-menu>li.menu3>ul {
+    text-align: center
+}
+
+.Gnb .gnb-menu>li.menu3>ul {
+    margin-left: 150px;
+}
+
+.Gnb .mask,
+.Gnb .gnb-menu>li>ul {
+    background: #333;
+}
+
+.Gnb .gnb-menu>li.on>a,
+.Gnb .gnb-menu>li>a:hover,
+.Gnb .gnb-menu>li>a:focus {
+    color: #333;
+}
+
+
+/*공통 푸터*/
+#footer {
+    padding: 0 0 50px;
+    z-index: 3;
+}
+
+#footer .top {
+    position: relative;
+    height: 50px;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4
+}
+
+#footer .bottom {
+    padding: 23px 0 0 0
+}
+
+#footer .bottom .section {}
+
+#footer .bottom .section .site_link {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#footer .bottom .section .site_link div>div {
+    width: 200px
+}
+
+#footer .bottom .section .site_link div>div,
+#footer .bottom .section .site_link a.btn {
+    margin-bottom: 5px
+}
+
+#footer .bottom .section .site_link a.btn {
+    padding: 7px 10px;
+    border-radius: 0;
+    background: #7b8294;
+    border: 0;
+    color: #fff
+}
+
+#footer .bottom .section .site_link a.btn:hover,
+#footer .bottom .section .site_link a.btn:focus {
+    background: #7b8294
+}
+
+#footer .info b {
+    color: #0055d5
+}
+
+#footer .info a,
+#footer .info span {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #3b3b3b;
+    line-height: 50px;
+}
+
+#footer .info .bar {
+    display: inline-block;
+    margin: 0 13px;
+    color: #3b3b3b;
+}
+
+#footer address em,
+#footer address span {
+    font-size: 15px
+}
+
+#footer address {
+    padding: 15px 0 0
+}
+
+#footer address em {
+    font-style: normal;
+    margin-right: 10px
+}
+
+#footer address span {
+    font-size: 13px
+}
+
+#footer {
+    clear: both
+}
+
+#footer .info a {
+    vertical-align: middle;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+#footer .info a b {
+    font-size: 105%
+}
+
+#footer .info a.admin {
+    font-weight: bold;
+    color: #2b74c0
+}
+
+.footer .site_link>div>div,
+#footer .site_link>div>div {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin: 0;
+    vertical-align: middle;
+    margin-right: -5px;
+}
+
+.footer .site_link>div>div>a.fsite,
+#footer .site_link>div>div>a.fsite {
+    display: block;
+    padding: 3px 8px;
+    border-right-width: 0;
+    text-align: left;
+    background: #e3e3e3;
+}
+
+.footer .site_link>div>div>ul,
+#footer .site_link>div>div>ul {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #ccc;
+    background: #fff
+}
+
+.footer .site_link>div>div>ul,
+#footer .site_link>div>div>ul {
+    overflow-y: auto;
+    border-right: 1px solid #ccc
+}
+
+.footer .site_link>div>div>ul>li,
+#footer .site_link>div>div>ul>li {
+    line-height: 25px;
+    border-left: 1px solid #ccc
+}
+
+.footer .site_link>div>div>ul>li>a,
+#footer .site_link>div>div>ul>li>a {
+    color: #666;
+    display: block;
+    padding: 3px 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.footer .site_link>div>div>a>span,
+#footer .site_link>div>div>a>span {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+    line-height: 28px;
+    height: 28px
+}
+
+.footer .site_link>div>div>a>span.f1,
+#footer .site_link>div>div>a>span.f1 {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.footer .site_link>div>div>a>span.f2,
+#footer .site_link>div>div>a>span.f2 {
+    position: absolute;
+    right: 7px;
+    top: 0;
+    width: 20px
+}
+
+.footer .site_link>div>div>a>span>i,
+#footer .site_link>div>div>a>span>i {
+    border-color: #888 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    width: 0;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%
+}
+
+.footer .site_link>div>div>a>span>i,
+.footer .site_link>div>div>a:hover>span>i,
+#footer .site_link>div>div>a>span>i,
+#footer .site_link>div>div>a:hover>span>i {
+    margin-top: -2px
+}
+
+.footer .site_link>div>div>a.active>span>i,
+#footer .site_link>div>div>a.active>span>i {
+    border-color: transparent transparent #888 transparent;
+    border-width: 0 4px 5px 4px
+}
+
+.footer .site_link>div>div>ul>li>a.disabled,
+#footer .site_link>div>div>ul>li>a.disabled {
+    color: #999
+}
+
+.footer .site_link>div>div>ul>li>a:hover,
+#footer .site_link>div>div>ul>li>a:hover {
+    background: #5897fb;
+    color: #fff;
+}
+
+.banner-wrap .banner-box4 .bx-wrapper .bx-viewport {
+    height: 55px !important;
+    margin-top: 5px;
+}
+
+.banner-wrap .banner-box4 .bx-wrapper .bx-viewport ul.banner-roll li img {
+    border: 1px solid #e5e5e5;
+}
+
+.banner-wrap .banner-t4 .control a {
+    top: 5px !important;
+}
+
+/* 도서관 둘러보기 */
+.libView {
+    padding: 0 0 10px
+}
+
+.libView strong {
+    display: block;
+    color: #004c92
+}
+
+.sns-box {
+    display: none;
+}
+
+@media (max-width:1000px) {
+    .libView {
+        text-align: center
+    }
+}
+
+h2.tit {
+    font-size: 120%;
+    background: url('/resources/homepage/cs/img/contents/text01.jpg') no-repeat 0 0;
+    height: 80px;
+    padding: 20px 0;
+    padding-left: 120px;
+    margin-top: 0;
+    margin-bottom: 20px
+}
+
+h2.tit span {
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+    padding: 5px 10px 5px
+}
+
+h2.tit02 {
+    background-image: url('/resources/homepage/cs/img/contents/text02.jpg')
+}
+
+h2.tit03 {
+    background-image: url('/resources/homepage/cs/img/contents/text03.jpg')
+}
+
+h2.tit04 {
+    background-image: url('/resources/homepage/cs/img/contents/text04.jpg')
+}
+
+h2.tit05 {
+    background-image: url('/resources/homepage/cs/img/contents/text05.jpg')
+}
+
+h2.tit06 {
+    background-image: url('/resources/homepage/cs/img/contents/text06.jpg')
+}
+
+h2.tit07 {
+    background-image: url('/resources/homepage/cs/img/contents/text07.jpg')
+}
+
+/* 콘텐츠 */
+.color1 {
+    color: #095077
+}
+
+.color2 {
+    color: #337a82
+}
+
+@media (max-width:550px) {
+
+    table.color-set>tbody>tr,
+    table.color-set>tbody>tr>td {
+        display: block
+    }
+}
+
+@media all and (max-width:1024px) {
+    .tnb {
+        height: 65px;
+        padding: 10px 0;
+    }
+
+    h1.mobile-logo {
+        display: block;
+        width: 200px;
+        height: 40px;
+        margin-top: 2px;
+        padding: 0 0 0 10px;
+    }
+
+    h1.mobile-logo a {
+        display: block;
+        background: url('/resources/homepage/bukgs/img/bukgs_logo.png') no-repeat center center;
+        background-size: 100% !important;
+        width: 200px;
+        height: 40px;
+        font-size: 0;
+    }
+
+    /* SNS 추가 */
+    .sns-box {
+        position: absolute;
+        display: block;
+        left: 220px;
+        top: 7px;
+    }
+
+    .sns-box li {
+        display: inline-block;
+        margin-right: 2px;
+    }
+
+    .sns-box li a img {
+        vertical-align: middle;
+    }
+}
+
+@media all and (max-width:767px) {
+    .home-up {
+        display: block;
+    }
+}
+
+@media all and (max-width:550px) {}
+
+@media all and (max-width:500px) {}
+
+@media all and (max-width:425px) {}
+
+@media all and (max-width:375px) {}
+
+@media all and (max-width:330px) {}

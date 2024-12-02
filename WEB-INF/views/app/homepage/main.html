@@ -7,11 +7,50 @@
 		<meta content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=1" name="viewport" />
 		<link href="../../../../resources/homepage/css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="../../../../resources/homepage/css/font.css" rel="stylesheet" type="text/css" />
+		<link href="../../../../resources/homepage/css/main.css" rel="stylesheet" type="text/css" />
+		<link href="../../../../resources/homepage/css/jquery.fullpage.css" rel="stylesheet" type="text/css" />
+		<link href="../../../../resources/homepage/css/default_new_fullpage.css" rel="stylesheet" type="text/css" />
 		<link href="../../../../resources/homepage/css/common.css" rel="stylesheet" type="text/css" />
-		<script src="../../../../resources/homepage/plugin/jquery-3.7.1.min.js" type="text/javascript"></script>
+		<link href="../../../../resources/homepage/css/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../../../resources/homepage/css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+		<script src="../../../../resources/homepage/plugin/jquery-1.12.4.min.js" type="text/javascript"></script>
 		<script src="../../../../resources/homepage/js/main.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/js/common.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/default-new-fullpage.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/jquery.fullpage.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/swiper-bundle.min.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/jquery.bxslider.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/jquery.mmenu.min.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/jquery-ui-1.12.0.min.js" type="text/javascript"></script>
+		<script src="../../../../resources/homepage/plugin/jquery-ui-1.12.0-datepicker.min.js" type="text/javascript"></script>
 	</head>
+	<script type="text/javascript">
+		$(function () {
+			$('#homeup').click(function () {
+				$('body,html').animate(
+					{
+						scrollTop: 0,
+					},
+					800
+				);
+				return false;
+			});
 
+			$('div#calendar-box').load('calendar3.do');
+			$('div#holiday-box').load('calendar5.do?homepage_id=h46');
+			$('ul.book_photo').eq(1).load('newBook.do');
+			$('ul.bestBookUl').load('bestBook.do');
+
+			$('#main-search-btn').on('click', function () {
+				if ($('input#search_text_1').val() == '') {
+					alert('검색어를 입력하세요.');
+					$('input#search_text_1').focus();
+					return false;
+				}
+				$('#mainSearchForm').submit();
+			});
+		});
+	</script>
 	<body>
 		<div id="wrap">
 			<div id="header">
@@ -82,7 +121,6 @@
 						<h2 class="blind">주메뉴</h2>
 						<div class="main-section">
 							<h1 class="web-logo"><a href="#this">구수산 도서관</a></h1>
-
 							<!-- menu S -->
 							<div class="g-menu">
 								<ul class="gnb-menu">
@@ -420,6 +458,623 @@
 					</div>
 				</div>
 			</div>
+			<div class="popupWrap main-section">
+				<div id="popupLayer"></div>
+			</div>
+			<div id="fullpage">
+				<!-- main0 -->
+				<div class="section" id="main0">
+					<div class="main-visual">
+						<div class="swiper-container mySwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide mvimg01">
+									<div class="mvText">
+										<span class="main_text01">행복북구문화재단 구수산 도서관</span> <span class="main_text02">내일을 향한 <strong>꿈</strong></span>
+									</div>
+								</div>
+								<div class="swiper-slide mvimg02">
+									<div class="mvText">
+										<span class="main_text01">행복북구문화재단 구수산 도서관</span> <span class="main_text02">내일을 향한 <strong>꿈</strong></span>
+									</div>
+								</div>
+								<div class="swiper-slide mvimg03">
+									<div class="mvText">
+										<span class="main_text01">행복북구문화재단 구수산 도서관</span> <span class="main_text02">내일을 향한 <strong>꿈</strong></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="mvBtn_wp">
+								<div class="mvBtn">
+									<div class="swiper-button-next"><img src="/resources/homepage/bukgs/img/mv_btn_next.png" alt="다음" /></div>
+									<div class="swiper-button-prev"><img src="/resources/homepage/bukgs/img/mv_btn_prev.png" alt="이전" /></div>
+								</div>
+
+								<div class="ctrBtn">
+									<a href="#" class="start">play</a>
+									<a href="#" class="stop">stop</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- main_search -->
+						<div class="search-area" id="main_search">
+							<form id="mainSearchForm" action="/bukgs/intro/search/index.do">
+								<input type="hidden" name="menu_idx" value="9" />
+								<input type="hidden" name="booktype" value="BOOKANDNONBOOK" />
+								<input type="hidden" name="_csrf" value="1fb5d19a-e79f-40b9-b9a7-330460effb42" />
+								<fieldset>
+									<legend class="blind">통합검색</legend>
+									<div class="main-box">
+										<select id="search_type" name="search_type" class="search_type">
+											<option value="L_TITLE">서명</option>
+											<option value="L_AUTHOR">저자</option>
+											<option value="L_PUBLISHER">발행처</option>
+											<option value="L_KEYWORD">키워드</option>
+										</select>
+										<div class="box1">
+											<div class="box2">
+												<label for="search_text_1" class="blind">통합자료검색</label>
+												<input name="title" id="search_text_1" type="text" class="text" placeholder="검색어를 입력하세요." style="ime-mode: active" />
+											</div>
+										</div>
+										<button id="main-search-btn">검색하기</button>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						<!-- //Main_search -->
+
+						<div class="holiday-box">
+							<div class="main-box">
+								<div class="title">
+									<h2>휴관일</h2>
+									<a href="/bukgs/module/calendarManage/index.do?menu_idx=36" class="btn-more1 more-more">더보기</a>
+								</div>
+								<div id="holiday-box" class="holiday-section"><span>1</span>&nbsp;&nbsp;&nbsp;<span>2</span>&nbsp;&nbsp;&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="main_scroll"><div class="main_scroll_wp_white">scroll down</div></div>
+					</div>
+				</div>
+				<!-- //main0 -->
+
+				<!-- section1 -->
+				<div class="section" id="main1">
+					<div class="main-section">
+						<div class="notice-box tabS">
+							<ul class="tabMenuS">
+								<li class="on"><a href="#tab1" data-link="/bukgs/board/index.do?menu_idx=35&manage_idx=699" class="t-tabs">공지사항</a></li>
+								<li><a href="#tab2" data-link="/bukgs/module/teach/index.do?menu_idx=32" class="t-tabs">프로그램접수</a></li>
+								<a href="/bukgs/board/index.do?menu_idx=35&manage_idx=699" class="btn-more2 more-more">더보기</a>
+							</ul>
+
+							<div class="news con" data-tab="tab1">
+								<div class="box">
+									<ul>
+										<li>
+											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525227">
+												<span class="time"><b>29</b><br />2024.11</span>
+												<em>[채용] (재)행복북구문화재단 도서관운영본부 기간제 근로자 채용 공고</em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525226">
+												<span class="time"><b>29</b><br />2024.11</span>
+												<em>[채용] (재)행복북구문화재단 구수산도서관 개관시간 연장지원 사업 기간제 근로자 채용 공고</em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525097">
+												<span class="time"><b>29</b><br />2024.11</span>
+												<em>[안내] 구수산도서관 12월 영화상영 안내</em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525084">
+												<span class="time"><b>28</b><br />2024.11</span>
+												<em>[안내] 2024년 &lt음악이 흐르는 도서관&gt 음악적 재능나눔형 프로그램 봉사자 모집</em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525030">
+												<span class="time"><b>28</b><br />2024.11</span>
+												<em>[안내] 2024년 구수산도서관 &lt12월 연말 행사&gt 안내</em>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="news con" data-tab="tab2" style="display: none">
+								<div class="box">
+									<ul>
+										<li>
+											<a href="/bukgs/module/teach/detail.do?menu_idx=95&searchCate1=16&group_idx=174&category_idx=0&teach_idx=21461&homepage_id=h46">
+												<span class="time"><b>21</b><br />2024.12</span>
+												<em><가족과 함께 해피 크리스마스></em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/module/teach/detail.do?menu_idx=95&searchCate1=16&group_idx=174&category_idx=0&teach_idx=21462&homepage_id=h46">
+												<span class="time"><b>26</b><br />2024.12</span>
+												<em><김재인 철학자와의 만남></em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/module/teach/detail.do?menu_idx=95&searchCate1=16&group_idx=174&category_idx=0&teach_idx=21463&homepage_id=h46">
+												<span class="time"><b>28</b><br />2024.12</span>
+												<em><명지쌤의 행복 Talk 콘서트></em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/module/teach/detail.do?menu_idx=95&searchCate1=16&group_idx=173&category_idx=0&teach_idx=21215&homepage_id=h46">
+												<span class="time"><b>26</b><br />2024.11</span>
+												<em>명지현과 함께하는 심리 상담소</em>
+											</a>
+										</li>
+
+										<li>
+											<a href="/bukgs/module/teach/detail.do?menu_idx=95&searchCate1=29&group_idx=132&category_idx=0&teach_idx=16145&homepage_id=h46">
+												<span class="time"><b>29</b><br />2024.11</span>
+												<em>Winter Season Theme</em>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="popupzone-box">
+							<div class="popZone">
+								<ul>
+									<li>
+										<a href="https://form.naver.com/response/aI5zpXH_2fgNmQYhRoovng"> <img src="/data/popupZone/h46/1732089410017" title="이용자만족도 조사" /></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="main_scroll"><div class="main_scroll_wp">scroll down</div></div>
+				</div>
+				<!-- //main1 -->
+
+				<!-- main2 -->
+				<div class="section" id="main2" style="background: blue">
+					<div class="main2_tit">
+						<p class="tit_text">MAIN SERVICE INFORMATION</p>
+						<h2 class="title"><b>주요서비스</b> 안내</h2>
+					</div>
+
+					<div class="mIcon">
+						<ul>
+							<li>
+								<a href="/bukgs/html.do?menu_idx=15" class="q01">
+									<span><img src="/resources/homepage/bukgs/img/q1.png" alt="희망도서신청" /><br class="webBr" />희망도서신청</span>
+								</a>
+							</li>
+							<li>
+								<a href="/bukgs/html.do?menu_idx=92" class="q02">
+									<span><img src="/resources/homepage/bukgs/img/q2.png" alt="상호대차서비스" /><br class="webBr" />상호대차서비스</span>
+								</a>
+							</li>
+							<li>
+								<a href="/bukgs/module/teach/index.do?menu_idx=32" class="q03">
+									<span><img src="/resources/homepage/bukgs/img/q3.png" alt="독서문화행사" /><br class="webBr" />독서문화행사</span>
+								</a>
+							</li>
+							<li>
+								<a href="/bukgs/intro/search/loan/history.do?menu_idx=53" class="q04">
+									<span><img src="/resources/homepage/bukgs/img/q4.png" alt="대출정보조회" /><br class="webBr" />대출정보조회</span>
+								</a>
+							</li>
+							<li>
+								<a href="/bukgs/html.do?menu_idx=91" class="q05">
+									<span><img src="/resources/homepage/bukgs/img/q5.png" alt="스마트도서관" /><br class="webBr" />스마트도서관</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://blog.naver.com/bukguarts" class="q06" target="_blank">
+									<span><img src="/resources/homepage/bukgs/img/q6.png" alt="블로그" /><br class="webBr" />블로그</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="main_scroll"><div class="main_scroll_wp_white">scroll down</div></div>
+				</div>
+				<!-- //main2 -->
+
+				<!-- main3 -->
+				<div class="section" id="main3" style="background: red">
+					<div class="main-section wid1450">
+						<div class="book-box tabS">
+							<ul class="tabMenuS">
+								<li class="on"><a href="#tab1" class="t-tabs" data-link="/bukgs/board/index.do?menu_idx=85&manage_idx=697">추천도서</a></li>
+								<li><a href="#tab2" class="t-tabs" data-link="/bukgs/intro/search/newBook/index.do?menu_idx=10">신착도서</a></li>
+							</ul>
+							<a href="/bukgs/board/index.do?menu_idx=85&manage_idx=697" class="btn-more2 more-more">더보기</a>
+
+							<div class="box con" data-tab="tab1">
+								<ul class="book_photo"></ul>
+							</div>
+
+							<div class="box con" data-tab="tab2" style="display: none">
+								<ul class="book_photo"></ul>
+							</div>
+						</div>
+
+						<div class="calendar-box" id="calendar-box"></div>
+					</div>
+					<div class="end"></div>
+
+					<div class="banner-box">
+						<div class="main-section">
+							<div class="main7_banner">
+								<div class="banner-wrap type4">
+									<div class="banner-t4">
+										<div class="control">
+											<a class="prev" href="#prev"><img src="/resources/homepage/bukgs/img/banner-prev.png" alt="이전" /><span class="blind">이전</span></a>
+											<a class="next" href="#next"><img src="/resources/homepage/bukgs/img/banner-next.png" alt="다음" /><span class="blind">다음</span></a>
+										</div>
+									</div>
+									<div class="banner-box4">
+										<ul class="banner-roll">
+											<li>
+												<span>
+													<a href="http://www.daegu.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1656637805802" alt="대구시청" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.buk.daegu.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604997311481" alt="북구청" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="http://library.daegu.go.kr/dgportal/index.do" target="_blank"> <img src="/data/banner/h46/1604996866184" alt="대구지역공공도서관통합검색" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.nanet.go.kr/main.do" target="_blank"> <img src="/data/banner/h46/1604996881928" alt="국회도서관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996895002" alt="국립중앙도서관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.nlcy.go.kr/NLCY/main/index.do" target="_blank"> <img src="/data/banner/h46/1604996908189" alt="국립어린이청소년도서관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.moe.go.kr/main.do" target="_blank"> <img src="/data/banner/h46/1604996920453" alt="교육부" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.mcst.go.kr/kor/main.jsp" target="_blank"> <img src="/data/banner/h46/1604996945396" alt="문화체육관광부" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://books.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996958498" alt="책이음서비스" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://books.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996979499" alt="책바다" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://cn.nld.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604996991607" alt="책나래" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.nl.go.kr/NL/contents/N30502000000.do" target="_blank"> <img src="/data/banner/h46/1604997005662" alt="사서에게물어보세요" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.keris.or.kr/main/main.do" target="_blank"> <img src="/data/banner/h46/1604997190097" alt="한국교육학술정보원" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.data.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604997203773" alt="공공데이터포털" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.nl.go.kr/kolisnet/index.do" target="_blank"> <img src="/data/banner/h46/1604997216616" alt="코리스넷" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://info.edunet.net" target="_blank"> <img src="/data/banner/h46/1604997230584" alt="에듀넷" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="http://www.kocsc.or.kr/mainPage.do" target="_blank"> <img src="/data/banner/h46/1604997244225" alt="방송통신심의위원회" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://cyberbureau.police.go.kr" target="_blank"> <img src="/data/banner/h46/1604997263044" alt="경찰청사이버안전국" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.juso.go.kr/openIndexPage.do" target="_blank"> <img src="/data/banner/h46/1604997276683" alt="도로명주소" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.bukgucouncil.daegu.kr/kr/main.do" target="_blank"> <img src="/data/banner/h46/1604997384979" alt="북구의회" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="http://www.dlibrary.go.kr/" target="_blank"> <img src="/data/banner/h46/1604997371392" alt="국가전자도서관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="http://info.daegu.go.kr/newshome/mtnmain.php" target="_blank"> <img src="/data/banner/h46/1656641172349" alt="시정홍보관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.data4library.kr/" target="_blank"> <img src="/data/banner/h46/1656641340287" alt="도서관정보나루" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="http://library.daegu.go.kr/elib/index.do" target="_blank"> <img src="/data/banner/h46/1656641589624" alt="대구전자도서관" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://blog.naver.com/daegu_news" target="_blank"> <img src="/data/banner/h46/1656641495388" alt="다채움" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.kla.kr/kla/" target="_blank"> <img src="/data/banner/h46/1656642116566" alt="한국도서관협회" /></a
+												></span>
+											</li>
+											<li>
+												<span>
+													<a href="https://www.kpipa.or.kr/main/main.do" target="_blank"> <img src="/data/banner/h46/1656642005878" alt="한국출판문화산업진흥원" /></a
+												></span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //main3 -->
+
+				<!-- footer_section -->
+				<div class="section fp-auto-height footer_area" id="foot_section">
+					<div class="mFooter">
+						<div class="top">
+							<div class="sections">
+								<div class="site_link">
+									<div>
+										<div>
+											<a class="fsite type1">
+												<span class="f1">대구광역시 공공도서관</span>
+												<span class="f2"><i></i></span
+											></a>
+											<ul style="display: none">
+												<li class="disabled"><a title="대구광역시통합도서관" href="http://library.daegu.go.kr/dgportal/index.do">대구광역시통합도서관</a></li>
+												<li class="disabled"><a title="대구2ㆍ28기념학생도서관" href="http://library.daegu.go.kr/228/index.do">대구2ㆍ28기념학생도서관</a></li>
+												<li class="disabled"><a title="대구2ㆍ28민주운동기념회관" href="http://library.daegu.go.kr/228lib/index.do">대구2ㆍ28민주운동기념회관</a></li>
+												<li class="disabled"><a title="국채보상운동기념도서관" href="https://library.daegu.go.kr/gukbo/index.do">국채보상운동기념도서관</a></li>
+												<li class="disabled"><a title="남부도서관" href="http://library.daegu.go.kr/nambu/index.do">남부도서관</a></li>
+												<li class="disabled"><a title="달성도서관" href="http://library.daegu.go.kr/dalseong/index.do">달성도서관</a></li>
+												<li class="disabled"><a title="동부도서관" href="http://library.daegu.go.kr/dongbu/index.do">동부도서관</a></li>
+												<li class="disabled"><a title="두류도서관" href="http://library.daegu.go.kr/duryu/index.do">두류도서관</a></li>
+												<li class="disabled"><a title="북부도서관" href="http://library.daegu.go.kr/bukbu/index.do">북부도서관</a></li>
+												<li class="disabled"><a title="삼국유사군위도서관" href="http://library.daegu.go.kr/gw/index.do">삼국유사군위도서관</a></li>
+												<li class="disabled"><a title="북부도서관" href="http://library.daegu.go.kr/seobu/index.do">서부도서관</a></li>
+												<li class="disabled"><a title="수성도서관" href="http://library.daegu.go.kr/suseong/index.do">수성도서관</a></li>
+
+												<!-- <li class="disabled"><a href="#">대구광역시 공공도서관</a></li> -->
+												<li class="disabled"><a title="남구대명어울림도서관" href="http://library.daegu.go.kr/namdm/index.do">남구대명어울림도서관</a></li>
+												<li class="disabled"><a title="남구이천어울림도서관" href="http://library.daegu.go.kr/namic/index.do">남구이천어울림도서관</a></li>
+												<li class="disabled"><a title="달서구립도서관" href="http://library.daegu.go.kr/dalseolib/index.do">달서구통합도서관</a></li>
+												<li class="disabled"><a title="달성군립도서관" href="http://library.daegu.go.kr/dalseonglib/index.do">달성군립도서관</a></li>
+												<li class="disabled"><a title="동구통합도서관" href="http://library.daegu.go.kr/donggu/index.do">동구통합도서관</a></li>
+												<li class="disabled"><a title="북구구수산도서관" href="http://library.daegu.go.kr/bukgs/index.do">북구구수산도서관</a></li>
+												<li class="disabled"><a title="북구대현도서관" href="http://library.daegu.go.kr/bukdh/index.do">북구대현도서관</a></li>
+												<li class="disabled"><a title="북구태전도서관" href="http://library.daegu.go.kr/buktj/index.do">북구태전도서관</a></li>
+												<li class="disabled"><a title="서구통합도서관" href="http://library.daegu.go.kr/seogulib/index.do">서구통합도서관</a></li>
+												<li class="disabled"><a title="수성구범어도서관" href="http://library.daegu.go.kr/beomeo/index.do">수성구범어도서관</a></li>
+												<li class="disabled"><a title="수성구용학도서관" href="http://library.daegu.go.kr/yonghak/index.do">수성구용학도서관</a></li>
+												<li class="disabled"><a title="수성구고산도서관" href="http://library.daegu.go.kr/gosan/index.do">수성구고산도서관</a></li>
+												<li class="disabled"><a title="중구통합도서관" href="http://library.daegu.go.kr/junggu/index.do">중구통합도서관</a></li>
+											</ul>
+										</div>
+										<a href="#" class="btn">이동</a>
+									</div>
+									<div>
+										<div>
+											<a class="fsite type1">
+												<span class="f1">교육 및 지역관련기관</span>
+												<span class="f2"><i></i></span
+											></a>
+											<ul style="display: none">
+												<li class="disabled"><a href="#">교육 및 지역관련기관</a></li>
+												<li class="disabled"><a title="대구광역시교육청" href="http://www.dge.go.kr">대구광역시교육청</a></li>
+												<li class="disabled"><a title="동부교육지원청" href=" https://www.dge.go.kr/dgdbe/main.do">동부교육지원청</a></li>
+												<li class="disabled"><a title="서부교육지원청" href="https://www.dge.go.kr/dgsbe/main.do">서부교육지원청</a></li>
+												<li class="disabled"><a title="남부교육지원청" href="https://www.dge.go.kr/dgnbe/main.do">남부교육지원청</a></li>
+												<li class="disabled"><a title="달성교육지원청" href="https://www.dge.go.kr/dgdse/main.do">달성교육지원청</a></li>
+												<li class="disabled"><a title="대구광역시교육연수원" href="http://edu.deti.or.kr">대구광역시교육연수원</a></li>
+												<li class="disabled"><a title="대구창의융합교육원" href="http://www.dge.go.kr/dicce">대구창의융합교육원</a></li>
+												<li class="disabled"><a title="대구학생문화센터" href="http://www.dge.go.kr/dccs">대구학생문화센터</a></li>
+												<li class="disabled"><a title="대구미래교육연구원" href="http://www.dge.go.kr/dferi">대구미래교육연구원</a></li>
+												<li class="disabled"><a title="대구교육해양수련원" href="http://www.dge.go.kr/dgsea">대구교육해양수련원</a></li>
+												<li class="disabled"><a title="대구광역시유아교육진흥원" href="http://www.dge.go.kr/daegu-i">대구광역시유아교육진흥원</a></li>
+												<li class="disabled"><a title="대구교육낙동강수련원" href="http://www.dge.go.kr/dgeriver">대구교육낙동강수련원</a></li>
+												<li class="disabled"><a title="대구교육팔공산수련원" href="http://www.dge.go.kr/palgongsan">대구교육팔공산수련원</a></li>
+												<li class="disabled"><a title="대구교육박물관" href="http://www.dge.go.kr/dme">대구교육박물관</a></li>
+												<li class="disabled"><a title="대구교육시설지원센터" href="http://www.dge.go.kr/defsc">대구교육시설지원센터</a></li>
+												<li class="disabled"><a title="대구평생교육진흥원" href="https://dle.study.daegu.kr/index.do">대구평생교육진흥원</a></li>
+											</ul>
+										</div>
+										<a href="#" class="btn">이동</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="middle">
+							<div class="sections">
+								<div class="info">
+									<a href="/bukgs/html.do?menu_idx=75"><b>개인정보처리방침</b></a>
+									<span class="bar">|</span>
+									<a href="/bukgs/html.do?menu_idx=109">영상정보처리방침</a>
+									<span class="bar">|</span>
+									<a href="/bukgs/html.do?menu_idx=78">도서관서비스헌장</a>
+									<span class="bar">|</span>
+									<a href="/bukgs/html.do?menu_idx=80">뷰어다운로드</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="bottom">
+							<div class="sections">
+								<p>
+									<em>(41434) 대구 북구 대천로 21 (읍내동)</em><br class="mobileBr" />
+									<em>전화 <b> 053-320-5150 </b></em>
+									<em>팩스 <b> 053-311-8197</b></em>
+								</p>
+								<p class="copyright">Copyright ⓒ 행복북구문화재단 구수산도서관. All rights reserved.</p>
+								<p class="f_logo"><img src="/resources/homepage/bukgs/img/footer_logo.png" alt="구수산도서관" /></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="home-up">
+						<img src="/resources/homepage/bukgs/img/m-top-btn.png" alt="위로" id="homeup" />
+					</div>
+				</div>
+				<!-- //footer_section -->
+			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		function fullPage() {
+			var myFullpage = new fullpage('#fullpage', {
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				navigation: true,
+				showActiveTooltip: true,
+				menu: '#menu',
+				responsiveWidth: 1025,
+				afterLoad: function (origin, destination, direction) {
+					var cur_page = destination.index + 1;
+					if (destination.index == 0) {
+						$('#header').addClass('background-white');
+						$('.Gnb').css('border-bottom', '0');
+						$('.Gnb').css('background', 'none');
+						$('.tnb').css('background', 'none');
+					} else if (destination.index == 1) {
+						$('#header').removeClass('background-white');
+						$('.Gnb').css('border-bottom', '1px solid #e6e6e6');
+						$('.Gnb').css('background', '#fff');
+						$('.tnb').css('background', '#fff');
+					} else if (destination.index == 2) {
+						$('#header').removeClass('background-white');
+						$('.Gnb').css('border-bottom', '1px solid #e6e6e6');
+						$('.Gnb').css('background', '#fff');
+						$('.tnb').css('background', '#fff');
+					} else if (destination.index == 3) {
+						$('#header').removeClass('background-white');
+						$('.Gnb').css('border-bottom', '1px solid #e6e6e6');
+						$('.Gnb').css('background', '#fff');
+						$('.tnb').css('background', '#fff');
+					} else {
+						$('#header').removeClass('background-white');
+						$('.Gnb').css('border-bottom', '1px solid #e6e6e6');
+						$('.Gnb').css('background', '#fff');
+						$('.tnb').css('background', '#fff');
+					}
+				},
+				afterResponsive: function (isResponsive) {},
+			});
+		}
+
+		fullPage();
+
+		// 모바일일 경우 fullpage 미사용
+		if ($(window).width() < 1025) {
+			if ($('#fullpage').hasClass('fp-destroyed')) {
+			} else {
+				fullpage_api.destroy('all');
+			}
+		} else {
+			fullPage();
+		}
+
+		// 리사이즈 될때 모바일 화면에서 fullpage 미사용
+		$(window).resize(function (e) {
+			if ($(window).width() < 1025) {
+				if ($('#fullpage').hasClass('fp-destroyed')) {
+				} else {
+					fullpage_api.destroy('all');
+				}
+			} else {
+				fullPage();
+			}
+		});
+	</script>
+	<script>
+		var mySwiper = new Swiper('.mySwiper', {
+			spaceBetween: 30,
+			centeredSlides: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			effect: 'fade',
+			loop: true,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+		$('.start').on('click', function () {
+			mySwiper.autoplay.start();
+			return false;
+		});
+		$('.stop').on('click', function () {
+			mySwiper.autoplay.stop();
+			return false;
+		});
+	</script>
 </html>
