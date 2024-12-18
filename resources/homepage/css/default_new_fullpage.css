@@ -2064,7 +2064,7 @@ ol {
 
 fieldset,
 img {
-	border: 0
+	/* border: 0; */
 }
 
 address,
@@ -7204,8 +7204,8 @@ table.joinSelect .joinText2 {
 }
 
 .banner-wrap .banner-box4 .banner-roll a img {
-	width: 170px;
-	height: 50px;
+	width: 10.625rem;
+	height: 3.125rem;
 }
 
 .banner-wrap .banner-box4 .banner-roll i {
@@ -7225,7 +7225,7 @@ table.joinSelect .joinText2 {
 	vertical-align: middle;
 	width: 40px;
 	height: 40px;
-	padding: 25px 0;
+	/* padding: 25px 0; */
 }
 
 .banner-wrap .banner-t4 .control a.prev {

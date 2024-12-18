@@ -504,6 +504,36 @@
 				<!-- section1 -->
 				<div class="section" id="main1">
 					<div class="main-section">
+						<div class="popup">
+							<div class="popup_en">POPUPZONE</div>
+							<div class="popup_kr">팝업존</div>
+							<div class="popup_swiper">
+								<div class="swiper-pagination"></div>
+								<div class="swiper_action_wrapper">
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+									<c:if test="${fn:length(popupZoneList) > 1}"><img src="../../../../resources/homepage/img/common/stop.svg" alt="정지버튼" class="popup_autoplay" role="button" /></c:if>
+								</div>
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="../../../../resources/homepage/img/common/Rectangle6.png" alt="${i.popup_zone_name}" />
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../../resources/homepage/img/common/Rectangle6.png" alt="${i.popup_zone_name}" />
+										</div>
+										<div class="swiper-slide">
+											<img src="../../../../resources/homepage/img/common/Rectangle6.png" alt="${i.popup_zone_name}" />
+										</div>
+
+										<!-- 팝업 예외 처리 -->
+										<!-- <div class="swiper-slide">
+													<img src="/resources/common/img/noImg2.png" alt="" />
+												</div>-->
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="notice-box tabS">
 							<ul class="tabMenuS">
 								<li class="on"><a href="#tab1" data-link="/bukgs/board/index.do?menu_idx=35&manage_idx=699" class="t-tabs">공지사항</a></li>
@@ -514,14 +544,14 @@
 							<div class="news con" data-tab="tab1">
 								<div class="box">
 									<ul>
-										<li>
+										<li class="important">
 											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525227">
 												<span class="time"><b>29</b><br />2024.11</span>
 												<em>[채용] (재)행복북구문화재단 도서관운영본부 기간제 근로자 채용 공고</em>
 											</a>
 										</li>
 
-										<li>
+										<li class="important">
 											<a href="/bukgs/board/view.do?menu_idx=35&manage_idx=699&board_idx=525226">
 												<span class="time"><b>29</b><br />2024.11</span>
 												<em>[채용] (재)행복북구문화재단 구수산도서관 개관시간 연장지원 사업 기간제 근로자 채용 공고</em>
@@ -593,16 +623,6 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="popupzone-box">
-							<div class="popZone">
-								<ul>
-									<li>
-										<a href="https://form.naver.com/response/aI5zpXH_2fgNmQYhRoovng"> <img src="/data/popupZone/h46/1732089410017" title="이용자만족도 조사" /></a>
-									</li>
-								</ul>
-							</div>
-						</div>
 					</div>
 					<div class="holiday-box">
 						<div class="main-box">
@@ -616,17 +636,6 @@
 					<div class="main_scroll"><div class="main_scroll_wp">scroll down</div></div>
 				</div>
 				<!-- //main1 -->
-
-				<!-- main2 -->
-				<div class="section" id="main2" style="background: blue">
-					<div class="main2_tit">
-						<p class="tit_text">MAIN SERVICE INFORMATION</p>
-						<h2 class="title"><b>주요서비스</b> 안내</h2>
-					</div>
-
-					<div class="main_scroll"><div class="main_scroll_wp_white">scroll down</div></div>
-				</div>
-				<!-- //main2 -->
 
 				<!-- main3 -->
 				<div class="section" id="main3" style="background: red">
@@ -657,145 +666,87 @@
 								<div class="banner-wrap type4">
 									<div class="banner-t4">
 										<div class="control">
-											<a class="prev" href="#prev"><img src="/resources/homepage/bukgs/img/banner-prev.png" alt="이전" /><span class="blind">이전</span></a>
-											<a class="next" href="#next"><img src="/resources/homepage/bukgs/img/banner-next.png" alt="다음" /><span class="blind">다음</span></a>
+											<a class="prev" href="#prev"><img src="../../../../resources/homepage/img/common/left.svg" alt="이전" /><span class="blind">이전</span></a>
+											<a class="next" href="#next"><img src="../../../../resources/homepage/img/common/right.svg" alt="다음" /><span class="blind">다음</span></a>
 										</div>
 									</div>
 									<div class="banner-box4">
 										<ul class="banner-roll">
 											<li>
 												<span>
-													<a href="http://www.daegu.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1656637805802" alt="대구시청" /></a
+													<a href="http://www.daegu.go.kr/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle11.png" alt="대구시청" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.buk.daegu.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604997311481" alt="북구청" /></a
+													<a href="https://www.buk.daegu.kr/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle12.png" alt="북구청" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="http://library.daegu.go.kr/dgportal/index.do" target="_blank"> <img src="/data/banner/h46/1604996866184" alt="대구지역공공도서관통합검색" /></a
+													<a href="http://library.daegu.go.kr/dgportal/index.do" target="_blank">
+														<img src="../../../../resources/homepage/img/common/Rectangle13.png" alt="대구지역공공도서관통합검색" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.nanet.go.kr/main.do" target="_blank"> <img src="/data/banner/h46/1604996881928" alt="국회도서관" /></a
+													<a href="https://www.nanet.go.kr/main.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle14.png" alt="국회도서관" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996895002" alt="국립중앙도서관" /></a
+													<a href="https://www.nl.go.kr" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle15.png" alt="국립중앙도서관" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.nlcy.go.kr/NLCY/main/index.do" target="_blank"> <img src="/data/banner/h46/1604996908189" alt="국립어린이청소년도서관" /></a
+													<a href="https://www.nlcy.go.kr/NLCY/main/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle16.png" alt="국립어린이청소년도서관" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.moe.go.kr/main.do" target="_blank"> <img src="/data/banner/h46/1604996920453" alt="교육부" /></a
+													<a href="https://www.moe.go.kr/main.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle11.png" alt="교육부" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.mcst.go.kr/kor/main.jsp" target="_blank"> <img src="/data/banner/h46/1604996945396" alt="문화체육관광부" /></a
+													<a href="https://www.mcst.go.kr/kor/main.jsp" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle12.png" alt="문화체육관광부" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://books.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996958498" alt="책이음서비스" /></a
+													<a href="https://books.nl.go.kr" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle13.png" alt="책이음서비스" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://books.nl.go.kr" target="_blank"> <img src="/data/banner/h46/1604996979499" alt="책바다" /></a
+													<a href="https://books.nl.go.kr" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle14.png" alt="책바다" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://cn.nld.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604996991607" alt="책나래" /></a
+													<a href="https://cn.nld.go.kr/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle15.png" alt="책나래" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.nl.go.kr/NL/contents/N30502000000.do" target="_blank"> <img src="/data/banner/h46/1604997005662" alt="사서에게물어보세요" /></a
+													<a href="https://www.nl.go.kr/NL/contents/N30502000000.do" target="_blank">
+														<img src="../../../../resources/homepage/img/common/Rectangle16.png" alt="사서에게물어보세요" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.keris.or.kr/main/main.do" target="_blank"> <img src="/data/banner/h46/1604997190097" alt="한국교육학술정보원" /></a
+													<a href="https://www.keris.or.kr/main/main.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle11.png" alt="한국교육학술정보원" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.data.go.kr/index.do" target="_blank"> <img src="/data/banner/h46/1604997203773" alt="공공데이터포털" /></a
+													<a href="https://www.data.go.kr/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle12.png" alt="공공데이터포털" /></a
 												></span>
 											</li>
 											<li>
 												<span>
-													<a href="https://www.nl.go.kr/kolisnet/index.do" target="_blank"> <img src="/data/banner/h46/1604997216616" alt="코리스넷" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://info.edunet.net" target="_blank"> <img src="/data/banner/h46/1604997230584" alt="에듀넷" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="http://www.kocsc.or.kr/mainPage.do" target="_blank"> <img src="/data/banner/h46/1604997244225" alt="방송통신심의위원회" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://cyberbureau.police.go.kr" target="_blank"> <img src="/data/banner/h46/1604997263044" alt="경찰청사이버안전국" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://www.juso.go.kr/openIndexPage.do" target="_blank"> <img src="/data/banner/h46/1604997276683" alt="도로명주소" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://www.bukgucouncil.daegu.kr/kr/main.do" target="_blank"> <img src="/data/banner/h46/1604997384979" alt="북구의회" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="http://www.dlibrary.go.kr/" target="_blank"> <img src="/data/banner/h46/1604997371392" alt="국가전자도서관" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="http://info.daegu.go.kr/newshome/mtnmain.php" target="_blank"> <img src="/data/banner/h46/1656641172349" alt="시정홍보관" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://www.data4library.kr/" target="_blank"> <img src="/data/banner/h46/1656641340287" alt="도서관정보나루" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="http://library.daegu.go.kr/elib/index.do" target="_blank"> <img src="/data/banner/h46/1656641589624" alt="대구전자도서관" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://blog.naver.com/daegu_news" target="_blank"> <img src="/data/banner/h46/1656641495388" alt="다채움" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://www.kla.kr/kla/" target="_blank"> <img src="/data/banner/h46/1656642116566" alt="한국도서관협회" /></a
-												></span>
-											</li>
-											<li>
-												<span>
-													<a href="https://www.kpipa.or.kr/main/main.do" target="_blank"> <img src="/data/banner/h46/1656642005878" alt="한국출판문화산업진흥원" /></a
+													<a href="https://www.nl.go.kr/kolisnet/index.do" target="_blank"> <img src="../../../../resources/homepage/img/common/Rectangle13.png" alt="코리스넷" /></a
 												></span>
 											</li>
 										</ul>
@@ -900,19 +851,18 @@
 						<div class="bottom">
 							<div class="sections">
 								<p>
-									<em>(41434) 대구 북구 대천로 21 (읍내동)</em><br class="mobileBr" />
-									<em>전화 <b> 053-320-5150 </b></em>
-									<em>팩스 <b> 053-311-8197</b></em>
+									<em>(42998) 대구 달성군 현풍읍 현풍동로19길 26</em><br class="mobileBr" />
+									<em>전화 <b> 053-231-2150 </b></em>
+									<em>팩스 <b> 053-615-7975</b></em>
 								</p>
-								<p class="copyright">Copyright ⓒ 행복북구문화재단 구수산도서관. All rights reserved.</p>
-								<p class="f_logo"><img src="/resources/homepage/bukgs/img/footer_logo.png" alt="구수산도서관" /></p>
+								<p class="copyright">Copyright ⓒ 대구달성어린이숲도서관. All rights reserved.</p>
 							</div>
 						</div>
 					</div>
 
-					<div class="home-up">
+					<!--<div class="home-up">
 						<img src="/resources/homepage/bukgs/img/m-top-btn.png" alt="위로" id="homeup" />
-					</div>
+					</div>-->
 				</div>
 				<!-- //footer_section -->
 			</div>

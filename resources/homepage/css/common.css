@@ -505,17 +505,14 @@ h1.mobile-logo {
     color: #fff;
 }
 
-.banner-wrap .banner-box4 .bx-wrapper .bx-viewport {
-    height: 55px !important;
-    margin-top: 5px;
-}
+
 
 .banner-wrap .banner-box4 .bx-wrapper .bx-viewport ul.banner-roll li img {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #E3E3E3;
 }
 
 .banner-wrap .banner-t4 .control a {
-    top: 5px !important;
+    /* top: 5px !important; */
 }
 
 /* 도서관 둘러보기 */
