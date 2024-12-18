@@ -2991,7 +2991,7 @@ h1 {
 .Gnb .gnb-menu>li>.SubMenu {
 	height: 44px;
 	line-height: 44px;
-	margin-top: 15px;
+	/* margin-top: 5.625rem; */
 }
 
 
@@ -3558,6 +3558,7 @@ transform:translatez(0);
 	position: relative;
 	max-width: 1260px;
 	margin: 0 auto;
+	/* height: 63px; */
 }
 
 .main-section::after {

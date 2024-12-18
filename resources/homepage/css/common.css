@@ -4,10 +4,11 @@
 /* 스타일 */
 a:hover,
 a:focus {
-    color: #2b74c0
+    color: #2b74c0;
 }
 
 /* header */
+
 .libSite {
     position: absolute;
     top: 0;
@@ -40,6 +41,12 @@ a:focus {
     text-align: center;
     line-height: 44px;
     padding: 0 15px;
+    color: #000;
+
+    font-family: Pretendard;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .libSite ul li.sns_icon a {
@@ -47,14 +54,17 @@ a:focus {
 }
 
 .libSite ul li.on a {
-    background: #000;
-    color: #fff;
+    color: #00853E;
+    font-family: 'Pretendard';
+    font-size: 0.875rem;
+    font-weight: 600;
 }
 
 .tnb {
     position: relative;
     margin: 0 auto;
     overflow: hidden;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 999999;
 }
@@ -66,11 +76,12 @@ a:focus {
 }
 
 .tnb .util a {
-    font-size: 15px;
-    color: #000;
+    color: #545454;
     font-weight: normal;
     display: inline-block;
     margin-top: 0;
+    font-size: 0.875rem;
+    font-family: 'Pretendard';
 }
 
 .tnb .util b {
@@ -83,9 +94,10 @@ a:focus {
 
 h1.web-logo a {
     display: block;
-    background: url('/resources/homepage/bukgs/img/bukgs_logo_b.png') no-repeat center center;
-    width: 230px;
-    height: 45px;
+    background: url('../img/common/logo.svg') no-repeat center center;
+    width: 12.5rem;
+    height: 3.375rem;
+    flex-shrink: 0;
     font-size: 0;
 }
 
@@ -104,26 +116,28 @@ h1.mobile-logo {
 }
 
 #header.background-white .libSite ul li a {
-    color: #fff;
+    color: #000;
+    font-size: 0.875rem;
 }
 
 #header.background-white .libSite ul li.on a {
-    background: #fff;
-    color: #000;
-    font-weight: bold;
+    color: #00853E;
+    font-family: 'Pretendard';
+    font-size: 0.875rem;
+    font-weight: 600;
 }
 
 #header.background-white .tnb .util a {
-    color: #fff;
+    color: #000;
 }
 
 #header.background-white .tnb .util b {
-    color: #fff;
+    color: #000;
 }
 
 #header.background-white h1.web-logo a {
     display: block;
-    background: url('/resources/homepage/bukgs/img/bukgs_logo.png') no-repeat center center;
+    background: url('../img/common/logo.svg') no-repeat center center;
 }
 
 #header.background-white .Gnb .g-menu a.last-box_w {
@@ -135,7 +149,8 @@ h1.mobile-logo {
 }
 
 #header.background-white .Gnb .gnb-menu>li>a {
-    color: #fff;
+    color: #000;
+
 }
 
 #header .head {
@@ -147,7 +162,7 @@ h1.mobile-logo {
 #header h1.web-logo {
     position: absolute;
     z-index: 10000;
-    top: 10px;
+    top: 1.12rem;
 }
 
 .popupWrap {
@@ -159,9 +174,9 @@ h1.mobile-logo {
     clear: both;
     text-align: center;
     width: 100%;
-    height: 63px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 5.625rem;
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
     overflow: inherit;
     position: relative;
     border-top: 1px solid #ccc;
@@ -175,7 +190,12 @@ h1.mobile-logo {
 .Gnb .g-menu a.last-box_w {
     position: absolute;
     right: 0;
-    top: 21px;
+    top: 1.9rem;
+    display: flex;
+    width: 1.5rem;
+    padding: 0.15625rem 0rem 0.21875rem 0rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .Gnb .gnb-menu {
@@ -195,12 +215,13 @@ h1.mobile-logo {
 }
 
 .Gnb .gnb-menu>li>a {
-    padding: 10px 0;
-    line-height: 43px;
-    height: 43px;
-    font-size: 18px;
-    color: #000;
-    font-weight: bold;
+    /* padding: 10px 0; */
+    line-height: 5.625rem;
+    height: 5.625rem;
+    font-family: 'Pretendard';
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
 }
 
 .Gnb .gnb-menu>li>ul {
@@ -591,7 +612,7 @@ h2.tit07 {
 
     h1.mobile-logo a {
         display: block;
-        background: url('/resources/homepage/bukgs/img/bukgs_logo.png') no-repeat center center;
+
         background-size: 100% !important;
         width: 200px;
         height: 40px;
