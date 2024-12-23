@@ -110,4 +110,13 @@ $(document).ready(function () {
 	/* ------------------------------------------------------------------------------------------------------------------- */
 });
 
-ur;
+$(document).ready(function () {
+	var swiper = new Swiper('#main3 .swiper-container', {
+		slidesPerView: 6, // 한 화면에 보이는 슬라이드 개수
+		spaceBetween: 28, // 슬라이드 간 간격
+		loop: true, // 무한 반복
+		autoplay: {
+			delay: 3000, // 3초마다 자동 이동
+		},
+	});
+});
