@@ -883,40 +883,37 @@
 
 /*푸터*/
 #foot_section .mFooter {
-    text-align: center;
-    background: #f8f8f8;
+    background: #FBFBFB;
 }
 
-#foot_section .mFooter .top {
+#foot_section .mFooter {
     height: 55px;
     line-height: 55px;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
 }
 
-#foot_section .mFooter .top .site_link {
+#foot_section .mFooter .site_link {
     position: relative;
     width: 505px;
     margin: 0 auto;
 }
 
-#foot_section .mFooter .top .site_link>div {
+#foot_section .mFooter .site_link>div {
     display: inline-block;
     float: left;
 }
 
-#foot_section .mFooter .top .site_link div>div {
-    width: 200px;
-}
 
-#foot_section .mFooter .top .site_link div>div,
-#foot_section .mFooter .top .site_link a.btn {
+
+#foot_section .mFooter .site_link div>div,
+#foot_section .mFooter .site_link a.btn {
     height: 55px;
     line-height: 55px;
     z-index: 100;
 }
 
-#foot_section .mFooter .top .site_link a.btn {
+#foot_section .mFooter .site_link a.btn {
     padding: 0 10px;
     border-radius: 0;
     background: #7b8294;
@@ -925,8 +922,8 @@
     box-sizing: border-box;
 }
 
-#foot_section .mFooter .top .site_link a.btn:hover,
-#foot_section .mFooter .top .site_link a.btn:focus {
+#foot_section .mFooter .site_link a.btn:hover,
+#foot_section .mFooter .site_link a.btn:focus {
     background: #7b8294
 }
 
@@ -979,6 +976,9 @@
     border-right-width: 0;
     text-align: left;
     border-left: 1px solid #e3e3e3;
+    width: 200px;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
 }
 
 #foot_section .mFooter .site_link>div>div>ul,
